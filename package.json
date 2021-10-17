@@ -2,7 +2,6 @@
     "name": "MOOC_node_mod6_quiz-server_entrega",
     "author": "ging-moocs",
     "license": "MIT",
-    "repository": "https://github.com/ging-moocs/MOOC_node_mod6_quiz-server_entrega",
     "version": "0.0.0",
     "main": "main.js",
     "scripts": {
@@ -10,13 +9,18 @@
     },
     "info": {
         "githubURL": "ging-moocs/MOOC_node_mod6_quiz-server_entrega",
-        "serverUrl": "https://autocorector.dit.upm.es/",
-        "courseId": "2",
-        "assignmentId": "11"
+        "serverUrl": "https://moocauto.dit.upm.es/",
+        "courseId": "452",
+        "assignmentId": "233"
+    },
+    "engines": {
+      "node": "^16.8.0",
+      "npm": "^7.21.0"
     },
     "dependencies": {
-        "sequelize": "^4.32.7",
-        "sqlite3": "^4.0.4",
+        "sequelize": "^6.6.5",
+        "sequelize-cli": "^6.2.0",
+        "sqlite3": "^5.0.2",
         "express": "^4.0.0",
         "method-override": "^3.0.0",
         "fs-extra": "^6.0.1"

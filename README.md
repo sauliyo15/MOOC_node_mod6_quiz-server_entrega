@@ -5,6 +5,8 @@
 
 # Módulo 6: Introducción a Express.js y sus Middlewares, MVC (Modelo - Vista - Controlador), AJAX - Entrega P2P: Quiz server
 
+Versión: 27 de octubre de 2021
+
 ## Objetivos
 
 * Entender y practicar con una aplicación de servidor Express

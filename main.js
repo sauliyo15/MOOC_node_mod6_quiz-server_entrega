@@ -13,7 +13,7 @@ app.use(methodOverride('_method', { methods: ["POST", "GET"] }));
 
 const Sequelize = require('sequelize');
 
-const options = { logging: false, operatorsAliases: false };
+const options = { logging: false, operatorsAliases: 0 };
 const sequelize = new Sequelize("sqlite:db.sqlite", options);
 
 const Quiz = sequelize.define( // define Quiz model (table quizzes)
@@ -136,7 +136,11 @@ const newView = quiz => {
   <body>
     <h1>Create New Quiz</h1>
     <form method="POST" action="/quizzes">
-      ${commonPart(quiz)}
+      <label for="question">Question: </label>
+      <input type="text" name="question" value="${quiz.question}" placeholder="Question"> 
+      <br>
+      <label for="answer">Answer: </label>
+      <input type="text" name="answer" value="${quiz.answer}" placeholder="Answer">
       <input type="submit" class="button" value="Create">
     </form>
     <br>

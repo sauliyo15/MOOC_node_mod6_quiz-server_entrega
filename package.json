@@ -11,7 +11,7 @@
         "githubURL": "ging-moocs/MOOC_node_mod6_quiz-server_entrega",
         "serverUrl": "https://moocauto.dit.upm.es/",
         "courseId": "452",
-        "assignmentId": "233"
+        "assignmentId": "294"
     },
     "engines": {
         "node": "^16.8.0",

@@ -3,9 +3,9 @@
 
 <br/><br/><br/>
 
-# Módulo 6: Introducción a Express.js y sus Middlewares, MVC (Modelo - Vista - Controlador), AJAX - Entrega P2P: Quiz server
+# Módulo 6: Introducción a Express.js y sus Middlewares - Quiz server
 
-Versión: 27 de octubre de 2021
+Versión: 14 de enero de 2022
 
 ## Objetivos
 
@@ -60,6 +60,7 @@ La compartición de datos entre clientes se realiza siempre guardando los cambio
 
 
 ### Vistas
+
 Las vistas generan las páginas Web en código HTML que se envían al cliente. Las vistas son aquí funciones que insertan los parámetros en un string, generando el código HTML devuelto al cliente.
 
 La vista **indexView (quizzes)** es la más compleja y la renderiza indexController(). Esta recibe como parámetro el array con todos los quizzes y genera una página Web con la lista HTML de las preguntas de los quizzes con los botones asociados de Edit y Delete, además del botón New_Quiz al final. 
@@ -106,7 +107,7 @@ El router recibe transacciones HTTP a las que responde invocando la acción del 
 
 ## Descargar el código del proyecto
 
-El proyecto debe clonarse en el ordenador desde el que se está trabajando:
+Es necesario utilizar la **versión 16 de Node.js**  (> 16.8) para el desarrollo de esta práctica. El proyecto debe clonarse en el ordenador desde el que se está trabajando: 
 
 ```
 $ git clone https://github.com/ging-moocs/MOOC_node_mod6_quiz-server_entrega

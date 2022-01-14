@@ -14,15 +14,15 @@
         "assignmentId": "233"
     },
     "engines": {
-      "node": "^16.8.0",
-      "npm": "^7.21.0"
+        "node": "^16.8.0",
+        "npm": "^7.21.0"
     },
     "dependencies": {
+        "express": "^4.0.0",
+        "fs-extra": "^6.0.1",
+        "method-override": "^3.0.0",
         "sequelize": "^6.6.5",
         "sequelize-cli": "^6.2.0",
-        "sqlite3": "^5.0.2",
-        "express": "^4.0.0",
-        "method-override": "^3.0.0",
-        "fs-extra": "^6.0.1"
+        "sqlite3": "^4.2.0"
     }
 }

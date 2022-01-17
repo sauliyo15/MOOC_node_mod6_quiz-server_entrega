@@ -14,8 +14,8 @@
         "assignmentId": "294"
     },
     "engines": {
-        "node": "^16.8.0",
-        "npm": "^7.21.0"
+        "node": ">=16.8.0",
+        "npm": ">=7.21.0"
     },
     "dependencies": {
         "express": "^4.0.0",

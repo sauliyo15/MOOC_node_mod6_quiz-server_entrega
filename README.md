@@ -113,12 +113,11 @@ Es necesario utilizar la **versión 16 de Node.js**  (> 16.8) para el desarrollo
 $ git clone https://github.com/ging-moocs/MOOC_node_mod6_quiz-server_entrega
 ```
 
-A continuación se debe acceder al directorio de trabajo, instalar las dependencias y configurar la base de datos. Después se debe abrir el fichero index.html con el editor de la elección del alumno.
+A continuación se debe acceder al directorio de trabajo e instalar las dependencias. Después se debe abrir el fichero index.html con el editor de la elección del alumno.
 
 ```
 $ cd MOOC_node_mod6_quiz-server_entrega
 $ npm install
-$ npm run migrate   ## En Windows: npm run migrate_win
 ```
 
 

@@ -2,7 +2,7 @@
 /* eslint-disable no-undef*/
 // IMPORTS
 const path = require("path");
-const Utils = require("./testutils");
+const Utils = require("../utils/testutils");
 const util = require('util');
 const exec = util.promisify(require("child_process").exec);
 const child_process = require("child_process");

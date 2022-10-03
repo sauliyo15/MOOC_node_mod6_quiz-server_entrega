@@ -9,9 +9,9 @@
     },
     "info": {
         "githubURL": "ging-moocs/MOOC_node_mod6_quiz-server_entrega",
-        "serverUrl": "https://moocauto.dit.upm.es/",
-        "courseId": "452",
-        "assignmentId": "294"
+        "serverUrl": "https://moocbot.dit.upm.es/",
+        "courseId": "1262",
+        "assignmentId": "549"
     },
     "engines": {
         "node": ">=16.8.0",
@@ -23,6 +23,7 @@
         "method-override": "^3.0.0",
         "sequelize": "^6.6.5",
         "sequelize-cli": "^6.2.0",
-        "sqlite3": "^4.2.0"
+        "sqlite3": "^4.2.0",
+        "autocorector": "^3.1.3"
     }
 }

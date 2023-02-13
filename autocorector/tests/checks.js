@@ -14,7 +14,7 @@ const T_WAIT = 2; // Time between commands
 const T_TEST = 2 * 60; // Time between tests (seconds)
 const WAIT =  typeof process.env.WAIT !== "undefined"?parseInt(process.env.WAIT):50000;
 const URL = "http://localhost:8000/quizzes";
-const path_assignment = path.resolve(path.join(__dirname, "../"));
+const path_assignment = path.resolve(path.join(__dirname, "../.."));
 const path_file = path.join(path_assignment, "main.js");
 const browser = new Browser({"waitDuration": WAIT, "silent": true});
 

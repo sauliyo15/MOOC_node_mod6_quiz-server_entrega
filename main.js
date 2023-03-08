@@ -264,4 +264,4 @@ app.use((error, req, res, next) => {
 });
 
 // Server started at port 8000
-app.listen(8000);
+app.listen(8000, () => console.log("Servidor Funcionando en el puerto 8000"));

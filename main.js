@@ -68,11 +68,8 @@ const indexView = quizzes =>
     quizzes.map(quiz =>
         `<div>
                 <a href="/quizzes/${quiz.id}/play">${quiz.question}</a>
-                <a href="/quizzes/${quiz.id}/edit"
-                   class="button">Edit</a>
-                <a href="/quizzes/${quiz.id}?_method=DELETE"
-                   onClick="return confirm('Delete: ${quiz.question}')"
-                   class="button">Delete</a>
+                <a href="/quizzes/${quiz.id}/edit" class="button">Edit</a>
+                <a href="/quizzes/${quiz.id}?_method=DELETE" onClick="return confirm('Delete: ${quiz.question}')" class="button">Delete</a>
              </div>`).join("\n") +
     `<a href="/quizzes/new" class="button">New Quiz</a>
     </body>
@@ -152,7 +149,27 @@ const newView = quiz => {
 
 // View to show a form to edit a given quiz.
 const editView = (quiz) => {
-    // .... introducir código
+    return `<!doctype html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Quiz</title>
+      ${style}
+    </head>
+    <body>
+      <h1>Edit A Quiz</h1>
+      <form method="POST" action="/quizzes/${quiz.id}?_method=PUT">
+        <label for="question">Question: </label>
+        <input type="text" name="question" value="${quiz.question}" placeholder="Question"> 
+        <br>
+        <label for="answer">Answer: </label>
+        <input type="text" name="answer" value="${quiz.answer}" placeholder="Answer">
+        <input type="submit" class="button" value="Update">
+      </form>
+      <br>
+      <a href="/quizzes" class="button">Go back</a>
+    </body>
+    </html>`;
 }
 
 
@@ -222,18 +239,58 @@ const createController = async (req, res, next) => {
 };
 
 //  GET /quizzes/:id/edit
-const editController = (req, res, next) => {
-    // .... introducir código
+const editController = async (req, res, next) => {
+    const id = Number(req.params.id);
+    if (Number.isNaN(id)) return next(new Error(`"${req.params.id}" should be number.`));
+
+    try {
+        const quiz = await Quiz.findByPk(id);
+        if (quiz) res.send(editView(quiz));
+        else next(new Error(`Quiz ${id} not found.`));
+    } catch (err) {
+        next(err)
+    }
 };
 
 //  PUT /quizzes/:id
-const updateController = (req, res, next) => {
-    // .... introducir código
+const updateController = async (req, res, next) => {
+    let pregunta = req.body.question;
+    let respuesta = req.body.answer;
+    let id = req.params.id;
+
+    try {
+        const quiz = await Quiz.findByPk(id);
+        if (quiz) {
+            await Quiz.update(
+                {question: pregunta, answer: respuesta},
+                {where: {id: id}}
+            );
+            res.redirect(`/quizzes`);
+        }
+        else next(new Error(`Quiz ${id} not found.`));
+    } catch (err) {
+        next(err)
+    }
+
 };
 
 // DELETE /quizzes/:id
-const destroyController = (req, res, next) => {
-    // .... introducir código
+const destroyController = async (req, res, next) => {
+    
+    let id = req.params.id;
+
+    try {
+        const quiz = await Quiz.findByPk(id);
+        if (quiz) {
+            await Quiz.destroy(
+                {where: {id: id}}
+            );
+            res.redirect(`/quizzes`);
+        }
+        else next(new Error(`Quiz ${id} not found.`));
+    } catch (err) {
+        next(err)
+    }
 };
 
 
@@ -244,6 +301,10 @@ app.get('/quizzes/:id/play', playController);
 app.get('/quizzes/:id/check', checkController);
 app.get('/quizzes/new', newController);
 app.post('/quizzes', createController);
+
+app.get('/quizzes/:id/edit', editController);
+app.put('/quizzes/:id', updateController);
+app.delete('/quizzes/:id', destroyController);
 
 
 // ..... crear rutas e instalar los MWs para:
